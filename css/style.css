@@ -59,6 +59,7 @@ ul {
 
 .chessboard li {
   width: calc(100% / 3 - 4px);
+  max-width: calc(100% / 3 - 4px);
   flex-shrink: 0;
   height: 90px;
   background-color: #ccc;
@@ -66,16 +67,40 @@ ul {
 
 li.circle::before {
   content: "O";
+  position: absolute;
+  transform: translateX(-50%);
   color: #0f0;
   font-size: 8rem;
 }
 
 li.cross::before {
   content: "X";
+  transform: translateX(-50%);
+  position: absolute;
   color: rgb(202, 27, 27);
   font-size: 8rem;
 }
 
 li.win {
   background-color: rgba(235, 17, 17, 0.5);
+}
+
+.chessboard > li:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.replayGameBtn {
+  padding: 1.5rem 3rem;
+  font-size: 1.4rem;
+  border: none;
+  background-color: rgb(240, 11, 11);
+  color: #fff;
+  border-radius: 0.4rem;
+  display: none;
+}
+
+.replayGameBtn:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }

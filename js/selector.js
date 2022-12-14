@@ -1,5 +1,5 @@
 export function getCellElement() {
-  const chessboard = getChessboard();
+  const chessboard = getChessboardElement();
   return chessboard.querySelectorAll("li");
 }
 
@@ -8,9 +8,13 @@ export function getChessboardElement() {
 }
 
 export function getStatusElement() {
-  return document.querySelector(".heading__status");
+  return document.querySelector(".heading__status > span");
 }
 
 export function getTurnElement() {
-  return document.querySelector(".heading__turn");
+  return document.querySelector(".heading__turn > span");
+}
+
+export function getReplayButton() {
+  return document.querySelector(".replayGameBtn");
 }
